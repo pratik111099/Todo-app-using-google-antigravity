@@ -1,4 +1,4 @@
-import mongoose, { Document, Schema } from 'mongoose';
+import mongoose, { Document, Schema } from "mongoose";
 
 export interface ITodo extends Document {
   title: string;
@@ -7,18 +7,18 @@ export interface ITodo extends Document {
 }
 
 const todoSchema: Schema = new mongoose.Schema({
-  title: { 
-    type: String, 
-    required: [true, 'Please add a todo title'] 
+  title: {
+    type: String,
+    required: [true, "Please add a todo title"],
   },
-  completed: { 
-    type: Boolean, 
-    default: false 
+  completed: {
+    type: Boolean,
+    default: false,
   },
-  createdAt: { 
-    type: Date, 
-    default: Date.now 
-  }
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
-export default mongoose.model<ITodo>('Todo', todoSchema);
+export default mongoose.model<ITodo>("Todo", todoSchema);
